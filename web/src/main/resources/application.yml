@@ -3,3 +3,19 @@ server:
 
   resources:
     static-locations: file:D:/ed/,classpath:/,classpath:/views/
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: eddie
+    password: eddie
+    stomp.port: 15670
+
+mq:
+  prefix: eddie
+  exchangeName: ${mq.prefix}_customExchange
+  user:
+    queue: ${mq.prefix}_user_queue
+    routingKey: ${mq.prefix}_userKey
+

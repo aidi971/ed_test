@@ -12,6 +12,8 @@
         <module>../parent</module>
         <module>../common</module>
         <module>../mq</module>
+        <module>../stomp</module>
+        <module>../user</module>
         <module>../web</module>
     </modules>
 </project>

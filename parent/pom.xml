@@ -6,6 +6,9 @@
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>../stomp</module>
+    </modules>
 
     <name>parent</name>
     <url>http://maven.apache.org</url>
@@ -17,4 +20,22 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <properties>
+        <rabbitMq.version>2.7.2</rabbitMq.version>
+        <org.springframework.version>5.3.22</org.springframework.version>
+        <!-- common version setting -->
+        <commons-io.version>2.6</commons-io.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <commons-text.version>1.3</commons-text.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <websocket.version>2.7.2</websocket.version>
+        <sockjs-client.version>1.1.2</sockjs-client.version>
+        <webjars-core.version>0.52</webjars-core.version>
+        <stomp-websocket.version>2.3.3</stomp-websocket.version>
+        <bootstrap.version>3.3.7</bootstrap.version>
+        <jquery.version>3.1.0</jquery.version>
+        <fastjson.version>1.2.62</fastjson.version>
+    </properties>
 </project>
