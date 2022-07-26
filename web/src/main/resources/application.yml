@@ -1,16 +1,23 @@
 server:
   port: 8080
 
-  resources:
-    static-locations: file:D:/ed/,classpath:/,classpath:/views/
-
 spring:
   rabbitmq:
+    stomp.port: 15670
     host: 127.0.0.1
     port: 5672
     username: eddie
     password: eddie
-    stomp.port: 15670
+    publisher-returns: true
+    template:
+      mandatory: true
+    publisher-confirm-type: correlated
+    listener:
+      simple:
+        acknowledge-mode: auto
+  web:
+    resources:
+      static-locations: file:D:/ed/,classpath:/,classpath:/resource/
 
 mq:
   prefix: eddie

@@ -37,5 +37,6 @@
         <bootstrap.version>3.3.7</bootstrap.version>
         <jquery.version>3.1.0</jquery.version>
         <fastjson.version>1.2.62</fastjson.version>
+        <webmvc.version>5.3.22</webmvc.version>
     </properties>
 </project>
