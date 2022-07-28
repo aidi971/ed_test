@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="stomp" />
         <module name="mq" />
         <module name="common" />
         <module name="web" />
+        <module name="user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +18,8 @@
       <module name="mq" target="1.8" />
       <module name="parent" target="1.8" />
       <module name="root" target="1.8" />
+      <module name="stomp" target="1.8" />
+      <module name="user" target="1.8" />
       <module name="web" target="1.8" />
     </bytecodeTargetLevel>
   </component>

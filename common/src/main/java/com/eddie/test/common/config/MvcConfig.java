@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
-    @Value("${spring.web.resources.static-locations}")
+    @Value("${spring.resources.static-locations}")
     private String path;
 
     @Override
@@ -22,7 +22,7 @@ public class MvcConfig implements WebMvcConfigurer {
         String[] split = path.split(",");
 
         // 解决swagger无法访问
-        registry.addResourceHandler("/swagger-ui.html","/doc.html","test2.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/swagger-ui.html","/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         // 解决swagger的js文件无法访问
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
 

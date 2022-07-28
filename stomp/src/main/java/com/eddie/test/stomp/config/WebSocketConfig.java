@@ -22,13 +22,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Value("${spring.rabbitmq.host}")
     private String host;
-    @Value("${spring.rabbitmq.stomp.port}")
-    private Integer stompPort;
+//    @Value("${spring.rabbitmq.stomp.port}")
+//    private Integer stompPort;
     @Value("${spring.rabbitmq.username}")
     private String username;
     @Value("${spring.rabbitmq.password}")
     private String password;
-
+    @Value("${spring.rabbitmq.virtual-host}")
+    private String virtualHost;
     @Bean
     public ServerEndpointExporter serverEndpointExporter(){
         return new ServerEndpointExporter();
@@ -40,11 +41,12 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.enableStompBrokerRelay("/topic", "/queue")
                 .setRelayHost(host)
-                .setRelayPort(stompPort)
+//                .setRelayPort(stompPort)
                 .setClientLogin(username)
                 .setClientPasscode(password)
                 .setSystemLogin(username)
-                .setClientPasscode(password);
+                .setSystemPasscode(password)
+                .setVirtualHost(virtualHost);
         registry.setApplicationDestinationPrefixes("/app");
 //        WebSocketMessageBrokerConfigurer.super.configureMessageBroker(registry);
     }

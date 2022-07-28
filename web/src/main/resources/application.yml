@@ -3,7 +3,7 @@ server:
 
 spring:
   rabbitmq:
-    stomp.port: 15670
+#    stomp.port: 15670
     host: 127.0.0.1
     port: 5672
     username: eddie
@@ -14,10 +14,17 @@ spring:
     publisher-confirm-type: correlated
     listener:
       simple:
-        acknowledge-mode: auto
-  web:
-    resources:
-      static-locations: file:D:/ed/,classpath:/,classpath:/resource/
+        acknowledge-mode: manual
+      direct:
+        retry:
+          max-attempts: 3
+          enabled: true
+    virtual-host: /
+    publisher-confirms: true
+  resources:
+    static-locations: classpath:/template/,classpath:/static/,classpath:/META-INF/resources/
+  mvc:
+    static-path-pattern: classpath:/static/**,classpath:/template/**
 
 mq:
   prefix: eddie

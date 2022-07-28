@@ -10,10 +10,10 @@
     <url>http://maven.apache.org</url>
     <modules>
         <module>../parent</module>
-        <module>../common</module>
         <module>../mq</module>
         <module>../stomp</module>
         <module>../user</module>
+        <module>../common</module>
         <module>../web</module>
     </modules>
 </project>

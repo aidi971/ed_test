@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.eddie.test</groupId>
             <artifactId>mq</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 </project>

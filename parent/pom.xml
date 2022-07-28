@@ -6,9 +6,6 @@
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>../stomp</module>
-    </modules>
 
     <name>parent</name>
     <url>http://maven.apache.org</url>
