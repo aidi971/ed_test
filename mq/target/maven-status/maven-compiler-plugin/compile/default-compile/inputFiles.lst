@@ -1,7 +1,0 @@
-D:\LH\ed_test\mq\src\main\java\com\eddie\test\mq\delay\config\intercept\RabbitMqConfig.java
-D:\LH\ed_test\mq\src\main\java\com\eddie\test\mq\delay\config\rabbitInterface\QueueConfig.java
-D:\LH\ed_test\mq\src\main\java\com\eddie\test\mq\delay\config\rabbitInterface\ExchangeConfig.java
-D:\LH\ed_test\mq\src\main\java\com\eddie\test\mq\delay\config\rabbitInterface\DirectExchangeConfig.java
-D:\LH\ed_test\mq\src\main\java\com\eddie\test\mq\delay\rabbitMq\Sender.java
-D:\LH\ed_test\mq\src\main\java\com\eddie\test\mq\delay\config\exchange\CustomExchangeConfig.java
-D:\LH\ed_test\mq\src\main\java\com\eddie\test\mq\delay\config\exchange\DelayConfig.java
