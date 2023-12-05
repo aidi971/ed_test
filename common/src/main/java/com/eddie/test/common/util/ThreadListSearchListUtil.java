@@ -32,7 +32,10 @@ public class ThreadListSearchListUtil {
      * @param <T>
      * @return
      */
-    public static <T extends ThreadModel> List<T> getList(Class<?> clazz) {
+    public static <T extends ThreadModel> List<T> getList(Class<?> clazz,Integer threadCountSize) {
+        if (null == threadCountSize) {
+            threadCountSize = THREAD_COUNT_SIZE;
+        }
         ThreadSearchModel<T> mapper = (ThreadSearchModel<T>) BeanFactoryUtil.getBean(clazz);
 
         // 记录开始时间
@@ -45,7 +48,7 @@ public class ThreadListSearchListUtil {
         List<T> threadList = new ArrayList<>(totalCount);
 
         // 暂定以5000条数据为一个线程，总数据大小除以5000 再向上取整
-        int round = (int) Math.ceil((double) totalCount / THREAD_COUNT_SIZE);
+        int round = (int) Math.ceil((double) totalCount / threadCountSize);
 
         // 创建一个临时存储List的Map，以线程名为k，用做List排序
         Map<Integer, List<T>> temporaryMap = new HashMap<>();
@@ -58,11 +61,12 @@ public class ThreadListSearchListUtil {
 
         // 分配数据
         for (int i = 0; i < round; i++) {
-            int startLen = i * THREAD_COUNT_SIZE;
+            int startLen = i * threadCountSize;
             int k = i + 1;
+            Integer finalThreadCountSize = threadCountSize;
             executor.execute(() -> {
                 //多线程查找数据
-                List<T> tList = mapper.subList(startLen, THREAD_COUNT_SIZE);
+                List<T> tList = mapper.subList(startLen, finalThreadCountSize);
                 // 根据线程保存对应的列表
                 temporaryMap.put(k, tList);
                 logger.info("正在处理线程【" + k + "】的数据，数据大小为：" + tList.size());
